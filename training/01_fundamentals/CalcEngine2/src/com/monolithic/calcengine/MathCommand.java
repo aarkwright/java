@@ -1,9 +1,9 @@
-package com.monolithic.calcengine2;
+package com.monolithic.calcengine;
 
 /**
  * Created by Jim on 10/18/2015.
  */
-public enum MathCommand {
+enum MathCommand {
     Add,
     Subtract,
     Multiply,

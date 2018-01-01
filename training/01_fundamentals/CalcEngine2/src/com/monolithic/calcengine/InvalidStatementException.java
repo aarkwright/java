@@ -1,5 +1,8 @@
-package com.monolithic.calcengine2;
+package com.monolithic.calcengine;
 
+/**
+ * Created by Jim on 10/26/2015.
+ */
 public class InvalidStatementException extends Exception {
     public InvalidStatementException(String reason, String statement) {
         super(reason + ": " + statement);
@@ -8,4 +11,5 @@ public class InvalidStatementException extends Exception {
     public InvalidStatementException(String reason, String statement, Throwable cause) {
         super(reason + ": " + statement, cause);
     }
+
 }

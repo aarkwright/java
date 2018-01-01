@@ -1,4 +1,5 @@
-package com.monolithic.calcengine2;
+package com.monolithic.calcengine;
+
 
 /**
  * Created by Jim on 10/18/2015.
@@ -9,17 +10,16 @@ public class CalculateHelper {
     private static final char MULTIPLY_SYMBOL = '*';
     private static final char DIVIDE_SYMBOL = '/';
 
-    MathCommand command;
-    double leftValue;
-    double rightValue;
-    double result;
+    private MathCommand command;
+    private double leftValue;
+    private double rightValue;
+    private double result;
 
     public void process(String statement) throws InvalidStatementException {
         // add 1.0 2.0
         String[] parts = statement.split(" ");
-        if (parts.length != 3) {
-            throw new InvalidStatementException("Incorrect number of field", statement);
-        }
+        if(parts.length != 3)
+            throw new InvalidStatementException("Incorrect number of fields", statement);
 
         String commandString = parts[0]; // add
 
@@ -29,11 +29,9 @@ public class CalculateHelper {
         } catch (NumberFormatException e) {
             throw new InvalidStatementException("Non-numeric data", statement, e);
         }
-
         setCommandFromString(commandString);
-        if (command == null) {
+        if(command == null)
             throw new InvalidStatementException("Invalid command", statement);
-        }
 
         CalculateBase calculator = null;
         switch (command) {
