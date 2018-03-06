@@ -7,11 +7,11 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 public class Adder implements Runnable {
-    private String inFile, outFile;
+    private String inFile;
+    private String outFile;
 
     public Adder(String inFile, String outFile) {
         // Assign filenames to member fields
-        
     }
 
     public void doAdd() throws IOException {
